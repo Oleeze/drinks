@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "../styles/drink.scss";
 
 class Drink extends Component {
   render() {
@@ -10,20 +11,17 @@ class Drink extends Component {
         <p>{this.props.cocktail.strInstructions} </p>
         <div>
           <h1>Ingredients</h1>
-          <div className="left">
-            {this.props.cocktail.ingredients.map(ingredient => (
-              <div>
+          <div className="ingredient-wrapper">
+            {this.props.cocktail.ingredients.map((ingredient, i) => (
+              <div className="ingredient">
                 <img
                   src={`https://www.thecocktaildb.com/images/ingredients/${ingredient}-Small.png`}
                 />
-                <p>{ingredient}</p>
+                <div className="ingredient-info">
+                  <p>{ingredient}</p>
+                  <p>{this.props.cocktail.measurements[i]}</p>
+                </div>
               </div>
-            ))}
-          </div>
-          <h1>Measurements</h1>
-          <div className="right">
-            {this.props.cocktail.measurements.map(measurement => (
-              <p>{measurement}</p>
             ))}
           </div>
         </div>

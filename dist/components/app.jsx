@@ -3,6 +3,7 @@ import Drink from "./drink.jsx";
 import axios from "axios";
 import Search from "./search.jsx";
 import cleaner from "../drinkCleaner";
+import "../styles/app.scss";
 
 class App extends Component {
   constructor(props) {
